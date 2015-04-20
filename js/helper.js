@@ -34,9 +34,42 @@ var HTMLworkExperiences = '<div id="workExperience" class="row section"><div cla
 var HTMLworkExperienceStart = '<div class = "entry"><div class="row"><div class="col-md-9 entry-description">';
 var HTMLworkExperienceLink = '<a href = "%link%"><img src="%image-source%" alt="work-logo" class="experience-icon" ></a>';
 var HTMLworkExperiencePosition = '<span class = "entry-description-title">%position%';
-var HTMLworkExperienceEmployer = ',%employer%</span></div>';
+var HTMLworkExperienceEmployer = ', %employer%</span></div>';
 var HTMLworkExperienceDate = '<div class="col-md-3 work-date"><span class = "entry-description-date">%date%</span></div></div>';
 var HTMLworkExperienceDescription ='<div class="row"><div class = "col-md-11 entry-text">%description%</div></div></div>';
+
+
+var HTMLprojectExperiences = '<div id="projectExperience" class="row section"><div class="col-md-3 section-title"><h3>Past Projects</h3></div><div id = "project-experiences" class="col-md-9 section-description"></div></div><hr>';
+
+var HTMLprojectExperienceStart = '<div class = "entry"><div class="row"><div class="col-md-9 entry-description">';
+var HTMLprojectExperienceLink = '<a href = "%link%"><img src="%image-source%" alt="work-logo" class="experience-icon" ></a>';
+var HTMLprojectExperienceTitle = '<span class = "entry-description-title">%title%';
+var HTMLprojectExperienceSponsor = ', %sponsor%</span></div>';
+var HTMLprojectExperienceDate = '<div class="col-md-3 work-date"><span class = "entry-description-date">%date%</span></div></div>';
+var HTMLprojectExperienceDescription ='<div class="row"><div class = "col-md-11 entry-text">%description%</div></div></div>';
+
+
+var HTMLeducationExperiences = '<div id="educationExperience" class="row section"><div class="col-md-3 section-title"><h3>Education Experiences</h3></div><div id = "education-experiences" class="col-md-9 section-description"></div></div><hr>';
+
+var HTMLeducationExperienceStart = '<div class = "entry"><div class="row"><div class="col-md-9 entry-description">';
+var HTMLeducationExperienceLink = '<a href = "%link%"><img src="%image-source%" alt="work-logo" class="experience-icon" ></a>';
+var HTMLeducationExperienceDegree = '<span class = "entry-description-title">%degree%';
+var HTMLeducationExperienceMajor = ', %major%';
+var HTMLeducationExperienceSchool = ', %school%</span></div>';
+var HTMLeducationExperienceDate = '<div class="col-md-3 work-date"><span class = "entry-description-date">%date%</span></div></div></div>';
+
+var HTMLrelevantTopics = '<div id="relevantTopics" class="row section"><div class="col-md-3 section-title"><h3>Relevant Topics</h3></div><div class="col-md-9 section-description"><div class = "entry"><div id = "topicList" class="row"></div></div></div></div><hr>';
+var HTMLrelevantTopic ='<div class="col-md-3 topic"> %topic% </div>';
+
+var HTMLfromTheWebSection='<div id="fromTheWeb" class="row section"><div class="col-md-3 section-title"><h3>From the Web</h3></div><div class="col-md-9 section-description"><div id="fromTheWebEntry" class = "web-entry" style="border-top: 3px solid %color%"></div></div></div><hr>';
+var HTMLfromTheWebTitle='<div class="row"><div class="col-md-12"><a href="%web-url%" class="web-site-title">%link-title%</a></div></div>';
+var HTMLfromTheWebLink='<div class="row"><div class="col-md-12 web-site-link">%web-url%</div></div>';
+var HTMLfromTheWebSnippet='<div class="row"><div class="col-md-12 web-site-snippet">%web-site-snippet%</div></div>';
+
+var HTMLmap = '<div id="mapDiv" class="maps row"><div id="mapTitle" class="col-12-md">Where I&#39ve Lived and Worked</div></div><hr>';
+
+var HTMLsocialIconsBelow = '<div id="letsConnect" class="row"><h2 class="center-text col-md-12">Let&#39s Connect</h2></div><div id="social-icons-below" class="row"></div>';
+
 
 /*var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr/>';

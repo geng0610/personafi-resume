@@ -1,26 +1,3 @@
-
-var projects = {
-    "projects": [
-        {
-            "title": "project1",
-            "dates": "2015",
-            "description": "this is project 1",
-            "images": [
-                "images/me.png",
-                "images/fry.jpg"
-            ]
-        },
-        {
-            "title": "project2",
-            "dates": "2014",
-            "description": "this is project 2",
-            "images": [
-                "images/197x148.gif",
-                "images/fry.jpg"
-            ]
-        }
-    ]
-};
 var bio = {
     "profile_pic": "images/me.png",
     "name": "Geng Tan",
@@ -95,75 +72,166 @@ var work = {
 
 $("#resume-main").append(HTMLworkExperiences);
 for (job in work.jobs){
-    $("#work-experiences").append(HTMLworkExperienceStart+HTMLworkExperienceLink.replace("%llink%",work.jobs[job].link).replace("%image-source%",work.jobs[job].image_link)+HTMLworkExperiencePosition.replace("%position%",work.jobs[job].position)+HTMLworkExperienceEmployer.replace("%employer%",work.jobs[job].employer)+HTMLworkExperienceDate.replace("%date%",work.jobs[job].date)+HTMLworkExperienceDescription.replace("%description%",work.jobs[job].description));
+    $("#work-experiences").append(HTMLworkExperienceStart
+        +HTMLworkExperienceLink.replace("%link%",work.jobs[job].link).replace("%image-source%",work.jobs[job].image_link)
+        +HTMLworkExperiencePosition.replace("%position%",work.jobs[job].position)
+        +HTMLworkExperienceEmployer.replace("%employer%",work.jobs[job].employer)
+        +HTMLworkExperienceDate.replace("%date%",work.jobs[job].date)
+        +HTMLworkExperienceDescription.replace("%description%",work.jobs[job].description));
 }
-//$("#work-experiences").append(HTMLworkExperienceStart+HTMLworkExperienceLink+HTMLworkExperiencePosition+HTMLworkExperienceEmployer+HTMLworkExperienceDate+HTMLworkExperienceDescription);
 
-
-/*bio.display = function(){
-        if (bio){
-        $("#header").append(HTMLheaderPic.replace("%profile-pic%",bio.profile_pic));
-        //$("#header").prepend(HTMLbioPic.replace("%data%",bio.image));
-        //$("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
-        //$("#header").prepend(HTMLheaderName.replace("%data%",bio.name));
-    };
-
-    if (bio.contacts){
-        if(bio.contacts.contactGeneric)
-            $("#topContacts").append(HTMLcontactGeneric.replace("%data%",bio.contacts.mobile));
-        if(bio.contacts.mobile)
-            $("#topContacts").append(HTMLmobile.replace("%data%",bio.contacts.mobile));
-        if(bio.contacts.email)
-            $("#topContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
-        if(bio.contacts.twitter)
-            $("#topContacts").append(HTMLtwitter.replace("%data%",bio.contacts.twitter));
-        if(bio.contacts.github)
-            $("#topContacts").append(HTMLgithub.replace("%data%",bio.contacts.github));
-        if(bio.contacts.blog)
-            $("#topContacts").append(HTMLblog.replace("%data%",bio.contacts.blog));
-        if(bio.contacts.location)
-            $("#topContacts").append(HTMLlocation.replace("%data%",bio.contacts.location));
-    };
-};*/
-
-
-//bio.display();
-
-var education = {
-    "schools": [
+var projects = {
+    "projects": [
         {
-            "name": "Cornell",
-            "location": "new york",
-            "degree": "MBA",
-            "majors": [
-                "MBA"
-            ],
-            "dates": "2014-2015",
-            "url": "www.cornell.edu"
+            "title": "project1",
+            "sponsor": "Cornell",
+            "dates": "2015",
+            "link": "http://tech.cornell.edu/",
+            "image_link": "http://www.fallsofficial.com/files/2014/09/Cornell.png",
+            "description": "this is project 1"
         },
         {
-            "name": "MIT",
-            "location": "Cambridge, MA",
-            "degree": "BA",
-            "majors": [
-                "MechE",
-                "Management"
-            ],
-            "dates": "2006-2010",
-            "url": "web.mit.edu"
-        }
-    ],
-    "onlineClasses": [
-        {
-            "title": "Nano-Degree",
-            "school": "Udacity",
-            "dates": "2015",
-            "url": "www.udacity.com"
+            "title": "project2",
+            "sponsor": "Appinions",
+            "dates": "2014",
+            "link": "http://www.appinions.com/",
+            "image_link": "https://pbs.twimg.com/profile_images/2597231983/jkjaf08nnf2pay487zra.jpeg",
+            "description": "this is project 2"
         }
     ]
 };
 
-education.display = function(){
+$("#resume-main").append(HTMLprojectExperiences);
+for (project in projects.projects){
+    $("#project-experiences").append(HTMLprojectExperienceStart
+        +HTMLprojectExperienceLink.replace("%link%",projects.projects[project].link).replace("%image-source%",projects.projects[project].image_link)
+        +HTMLprojectExperienceTitle.replace("%title%",projects.projects[project].title)
+        +HTMLprojectExperienceSponsor.replace("%sponsor%",projects.projects[project].sponsor)
+        +HTMLprojectExperienceDate.replace("%date%",projects.projects[project].dates)
+        +HTMLprojectExperienceDescription.replace("%description%",projects.projects[project].description));
+}
+
+var education = {
+    "schools": [
+        {
+            "school": "Cornell Tech",
+            "location": "New York City, NY",
+            "degree": "MBA",
+            "dates": "2014-2015",
+            "link": "http://tech.cornell.edu/",
+            "image_link": "http://www.fallsofficial.com/files/2014/09/Cornell.png"
+        },
+        {
+            "school": "MIT",
+            "location": "Cambridge, MA",
+            "degree": "BS",
+            "major": "Mechanical Engineering",
+            "dates": "2006-2010",
+            "link": "web.mit.edu",
+            "image_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/321px-MIT_logo.svg.png"
+        },
+        {
+            "school": "MIT",
+            "location": "Cambridge, MA",
+            "degree": "BS",
+            "major": "Management Science",
+            "dates": "2006-2010",
+            "link": "web.mit.edu",
+            "image_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/321px-MIT_logo.svg.png"
+        },
+        {
+            "school": "Udacity",
+            "location": "",
+            "degree": "Nano-Degree",
+            "major": "Web Development",
+            "dates": "2015",
+            "link": "udacity.com",
+            "image_link": "https://forums.udacity.com/upfiles/udacity-logo.jpg"
+        }
+    ]
+};
+
+$("#resume-main").append(HTMLeducationExperiences);
+for (school in education.schools){
+    var major = "";
+    if(education.schools[school].major){
+        major=HTMLeducationExperienceMajor.replace("%major%",education.schools[school].major);
+    }
+    $("#education-experiences").append(HTMLeducationExperienceStart
+        +HTMLeducationExperienceLink.replace("%link%",education.schools[school].link).replace("%image-source%",education.schools[school].image_link)
+        +HTMLeducationExperienceDegree.replace("%degree%",education.schools[school].degree)
+        +major
+        +HTMLeducationExperienceSchool.replace("%school%",education.schools[school].school)
+        +HTMLeducationExperienceDate.replace("%date%",education.schools[school].dates));
+}
+
+var relevantTopics = {
+    "topics": [
+        {
+            "text": "NLP",
+            "relevance": "0.8"
+        },
+        {
+            "text": "Product Management",
+            "relevance": "0.8"
+        },
+        {
+            "text": "Agile Development",
+            "relevance": "0.8"
+        },
+        {
+            "text": "Strategy",
+            "relevance": "0.8"
+        },
+        {
+            "text": "Wireframe",
+            "relevance": "0.8"
+        },
+        {
+            "text": "PowerPoint",
+            "relevance": "0.8"
+        },
+        {
+            "text": "Excel",
+            "relevance": "0.8"
+        },
+        {
+            "text": "Tableau",
+            "relevance": "0.7"
+        },
+        {
+            "text": "Microsoft Office",
+            "relevance": "0.2"
+        }
+    ]
+};
+
+$("#resume-main").append(HTMLrelevantTopics);
+for (topic in relevantTopics.topics) {
+    if(relevantTopics.topics[topic].relevance/1>0.5){
+        $("#topicList").append(HTMLrelevantTopic.replace("%topic%",relevantTopics.topics[topic].text));
+    }
+}
+
+var fromTheWebColor = ["#3F51B5", "#D50000", "#109D59", "#FFC107"]
+
+
+
+
+
+
+
+$("#resume-main").append(HTMLmap);
+
+if(bio.social){
+    $("#resume-main").append(HTMLsocialIconsBelow);
+    for (network in bio.social) {
+        $("#social-icons-below").append(HTMLsocialIcon.replace(/%social%/g,network).replace("%link%",bio.social[network].link));
+    }
+}
+
+
+/*education.display = function(){
     for(school in education.schools){
         $("#education").append(HTMLschoolStart);
         var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
@@ -199,39 +267,6 @@ education.display = function(){
 education.display(); 
 
 
-
-work.display = function(){
-    for (job in work.jobs){
-    	$("#workExperience").append(HTMLworkStart);
-    	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-    	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    	var formattedEmployerTitle = formattedEmployer +formattedTitle+formattedDates+formattedLocation+formattedDescription;
-    	$(".work-entry:last").append(formattedEmployerTitle);
-    };
-};
-
-work.display();
-
-$(document).click(function(loc){
-	var x = loc.pageX;
-	var y = loc.pageY;
-	logClicks(x,y);
-});
-
-function inName(name){
-    var name=name.trim().split(" ");
-    console.log(name);
-    name[1]=name[1].toUpperCase();
-    name[0]=name[0].slice(0,1).toUpperCase()+name[0].slice(1).toLowerCase();
-    return name[0]+" "+name[1];
-}
-
-$("#main").append(internationalizeButton);
-
-
 projects.display = function(){
     for(project in projects.projects){
         $("#projects").append(HTMLprojectStart);
@@ -256,6 +291,39 @@ projects.display = function(){
 
 
 projects.display(); 
+
+work.display = function(){
+    for (job in work.jobs){
+    	$("#workExperience").append(HTMLworkStart);
+    	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    	var formattedEmployerTitle = formattedEmployer +formattedTitle+formattedDates+formattedLocation+formattedDescription;
+    	$(".work-entry:last").append(formattedEmployerTitle);
+    };
+};
+
+work.display();
+
+$(document).click(function(loc){
+	var x = loc.pageX;
+	var y = loc.pageY;
+	logClicks(x,y);
+});*/
+
+function inName(name){
+    var name=name.trim().split(" ");
+    console.log(name);
+    name[1]=name[1].toUpperCase();
+    name[0]=name[0].slice(0,1).toUpperCase()+name[0].slice(1).toLowerCase();
+    return name[0]+" "+name[1];
+}
+
+//$("#resume-main").append(internationalizeButton);
+
+
 
 $("#mapDiv").append(googleMap);
 
