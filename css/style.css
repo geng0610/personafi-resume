@@ -1,0 +1,315 @@
+* {
+  padding:0;
+  margin:0;
+  font-family: 'Roboto', sans-serif;
+  color: #9E9E9E;
+}
+
+
+#resume-main {
+  max-width: 960px;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  border: 1px solid #9E9E9E;
+  border-top: 3px solid #3F51B5;
+  box-shadow: 0px 3px 3px #888888;
+}
+
+#header{
+  padding-top: 10px;
+}
+
+#header-details{
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.header-name, .header-description {
+  margin-top:0px;
+  margin-bottom:0px;
+  margin-right:0px;
+  margin-left:0px;
+}
+
+.header-description{
+  height: 58px;
+  margin-bottom: 4px; 
+}
+
+#profile-pic {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  height: 184px
+}
+
+#social-icons {
+  text-align: left;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 24px;
+}
+
+.social-icon {
+  max-width:36px;
+  margin-right: 2px;
+  margin-left: 2px;
+  padding: 0px;
+}
+
+.personal-contact {
+  padding-top:2px;
+  padding-bottom:2px;
+}
+
+.contact-description {
+  height:24px;
+  vertical-align: middle;
+}
+
+.contact-icon {
+  max-width:24px;
+  padding: 0px;
+}
+
+.contact-text{
+  display:inline-block;
+  vertical-align: middle;
+  padding: 0px;
+  margin-left: 5px; 
+}
+
+.more-contact-description {
+  height:24px;
+  vertical-align: middle;
+}
+
+.section {
+  padding-left:0px;
+  padding-right:0px;
+}
+
+.section-title {
+  padding-top: 14px;
+  text-align:right;
+  margin-top: 0px;
+}
+
+.section-description {
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.entry {
+  padding-top:2px;
+  padding-bottom:2px;
+}
+
+.entry-description {
+  height:24px;
+  vertical-align: middle;
+}
+
+.experience-icon {
+  max-width:24px;
+  padding: 0px;
+}
+
+.entry-description-title {
+  display:inline-block;
+  vertical-align: middle;
+  padding: 0px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.entry-description-date {
+  display:inline-block;
+  vertical-align: middle;
+  padding: 0px;
+  font-size: 14px;
+}
+
+.entry-text {
+  padding-top:2px;
+  padding-bottom:2px;
+  font-size: 12px;
+}
+
+.web-entry {
+  border: 1px solid #9E9E9E;
+  box-shadow: 0px 1px 1px #888888;
+  padding: 10px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.web-site-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3F51B5;
+}
+
+.web-site-link {
+  font-size: 10px;
+  font-weight: 400;
+  color: #4CAF50;
+}
+
+.web-site-snippet {
+  font-size: 12px;
+  font-weight: 400;
+  color: #9E9E9E;
+}
+
+#mapTitle {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#social-icons-below {
+  text-align: center;
+  margin-left: 48px;
+  margin-right: 48px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  color: #9E9E9E;
+  line-height: 48px;
+  font-weight: 200;
+  /*display: inline;*/
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #9E9E9E;
+  line-height: 29px;
+  /*padding: 10px;*/
+}
+
+h3 {
+  font-style: italic;
+  font-size: 16px;
+  color: #9E9E9E;
+  font-weight: bold;
+  margin: 0px;
+  padding:0px;
+  /*line-height: 22px;*/
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4A4A4A;
+  line-height: 17px;
+}
+
+p {
+  font-size: 14px;
+  color: #333333;
+  line-height: 21px;
+}
+
+.flex-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.center-content {
+  padding-top: 2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2.5%
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  padding: 10px;
+}
+
+span {
+  padding: 5px;
+}
+
+#letsConnect {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  #letsConnect {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width:990px) {
+  .header-name, .header-description, .contact-description, 
+  .more-contact-description, .section-title, .entry-description, .work-date, .entry-text, .topic{
+    text-align: center;
+  }
+
+  #resume-main{
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  #social-icons {
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+
+  .entry-text{
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .web-entry{
+    margin-left: 20px;
+  }
+}
+
+
+@media only screen and (max-width:900px) {
+  .biopic {
+    width: 175px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #letsConnect {
+    margin-top: 10%;
+  }
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+  margin:0px; 
+}
+
+@media only screen and (min-width: 750px) {
+}
