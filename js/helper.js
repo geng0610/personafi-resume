@@ -161,14 +161,14 @@ function initializeMap() {
 
     // iterates through school locations and appends each location to
     // the locations array
-    for (var school in profile.schools) {
-      locations.push(profile.schools[school].location);
+    for (var school in schools.schools) {
+      locations.push(schools.schools[school].location);
     }
 
     // iterates through work locations and appends each location to
     // the locations array
-    for (var job in profile.jobs) {
-      locations.push(profile.jobs[job].location);
+    for (var job in jobs.jobs) {
+      locations.push(jobs.jobs[job].location);
     }
 
     return locations;

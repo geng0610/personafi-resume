@@ -27,7 +27,9 @@ var profile = {
         "vine": {"link":"https://vine.co/"},
         "quora": {"link":"http://www.quora.com/Geng-Tan"},
         "youtube": {"link":"https://www.youtube.com/user/geng0610"}
-    },
+    }
+};
+var jobs = {
     "jobs": [
         {
             "employer": "Cornell",
@@ -69,7 +71,9 @@ var profile = {
             "image_link": "http://utsbsoc.com/wp-content/uploads/2012/07/bcg-icon.png",
             "description": "<b>Management consulting across a number of industries</b><li>Developed strategies to realize $80M+ in saving opportunities, identified through analysis of $4B+ procurement data for a pharmaceutical company</li><li>Identified a decreasing value perception by analyzing survey results for a consumer goods company suffering from a slowing revenue growth</li><li>Recommended growth opportunities after developing a forecast for returns across 20 U.S. housing markets for a home building company</li><li>Recommended profitability improvement initiatives by modeling financial impact of operating under various supply and demand scenarios for a major consumer goods company</li><li>Benchmarked the financial performance of $3B+ business divisions and forecasted financial impact of various initiatives for a major building products company</li>"
         }
-    ],
+    ]
+};
+var projects = {
     "projects": [
         {
             "title": "NYC Taxi Viz",
@@ -89,7 +93,9 @@ var profile = {
             "image_link": "http://www.fallsofficial.com/files/2014/09/Cornell.png",
             "description": '<div>During Big Data Hackathon held at Cornell Tech, we looked at the commonalities between people from CrunchBase Database and me in order to explore ways to optimize search result for a person. Characteristics about people are extracted using AlchemyAPI (NLP). This graph is based on a search result for product related people. The larger the dot, the more commonalities the person shares with me. The lines between each person represent common traists shared by them. Thicker lines means more commonalities.</div><div style="text-align:center"><div id="chart"></div></div>'
         }
-    ],
+    ]
+};
+var schools = {
     "schools": [
         {
             "school": "Cornell Tech",
@@ -130,7 +136,9 @@ var profile = {
             "link": "udacity.com",
             "image_link": "https://forums.udacity.com/upfiles/udacity-logo.jpg"
         }
-    ],
+    ]
+};
+var websites = {
     "websites": [
         {
             "title": "Projects by Geng",
@@ -162,7 +170,9 @@ var profile = {
             "link": "https://soundcloud.com/geng-tan/halloween-party-2011",
             "snippet": "Follow Geng Tan and others on SoundCloud. Sign up for SoundCloud. Sign in. Here's a part of the mix I made for a Halloween party in 2011."
         }
-    ],
+    ]
+};
+var topics = {
     "topics": [
         {
             "text": "NLP",
@@ -224,65 +234,89 @@ if(profile.social){
         $("#social-icons").append(HTMLsocialIcon.replace(/%social%/g,network).replace("%link%",profile.social[network].link));
     }
 }
+}
 
+profile.display();
+
+jobs.display = function(){
 $("#resume-main").append(HTMLworkExperiences);
-for (job in profile.jobs){
+for (job in jobs.jobs){
     $("#work-experiences").append(HTMLworkExperienceStart
-        +HTMLworkExperienceLink.replace("%link%",profile.jobs[job].link).replace("%image-source%",profile.jobs[job].image_link)
-        +HTMLworkExperienceSource.replace("%source%",profile.jobs[job].source)
-        +HTMLworkExperiencePosition.replace("%position%",profile.jobs[job].position)
-        +HTMLworkExperienceEmployer.replace("%employer%",profile.jobs[job].employer)
-        +HTMLworkExperienceDate.replace("%date%",profile.jobs[job].date)
-        +HTMLworkExperienceDescription.replace("%description%",profile.jobs[job].description));
+        +HTMLworkExperienceLink.replace("%link%",jobs.jobs[job].link).replace("%image-source%",jobs.jobs[job].image_link)
+        +HTMLworkExperienceSource.replace("%source%",jobs.jobs[job].source)
+        +HTMLworkExperiencePosition.replace("%position%",jobs.jobs[job].position)
+        +HTMLworkExperienceEmployer.replace("%employer%",jobs.jobs[job].employer)
+        +HTMLworkExperienceDate.replace("%date%",jobs.jobs[job].date)
+        +HTMLworkExperienceDescription.replace("%description%",jobs.jobs[job].description));
 }
 $(".entry-text").last()[0].getElementsByTagName('hr')[0].remove();
+}
+
+jobs.display();
 
 
+projects.display = function (){
 $("#resume-main").append(HTMLprojectExperiences);
-for (project in profile.projects){
+for (project in projects.projects){
     $("#project-experiences").append(HTMLprojectExperienceStart
-        +HTMLprojectExperienceLink.replace("%link%",profile.projects[project].link).replace("%image-source%",profile.projects[project].image_link)
-        +HTMLprojectExperienceSource.replace("%source%",profile.projects[project].source)
-        +HTMLprojectExperienceTitle.replace("%title%",profile.projects[project].title)
-        +HTMLprojectExperienceSponsor.replace("%sponsor%",profile.projects[project].sponsor)
-        +HTMLprojectExperienceDate.replace("%date%",profile.projects[project].dates)
-        +HTMLprojectExperienceDescription.replace("%description%",profile.projects[project].description));
+        +HTMLprojectExperienceLink.replace("%link%",projects.projects[project].link).replace("%image-source%",projects.projects[project].image_link)
+        +HTMLprojectExperienceSource.replace("%source%",projects.projects[project].source)
+        +HTMLprojectExperienceTitle.replace("%title%",projects.projects[project].title)
+        +HTMLprojectExperienceSponsor.replace("%sponsor%",projects.projects[project].sponsor)
+        +HTMLprojectExperienceDate.replace("%date%",projects.projects[project].dates)
+        +HTMLprojectExperienceDescription.replace("%description%",projects.projects[project].description));
 }
 $(".entry-text").last()[0].getElementsByTagName('hr')[0].remove();
+}
 
+projects.display();
+
+schools.display = function (){
 $("#resume-main").append(HTMLeducationExperiences);
-for (school in profile.schools){
+for (school in schools.schools){
     var major = "";
-    if(profile.schools[school].major){
-        major=HTMLeducationExperienceMajor.replace("%major%",profile.schools[school].major);
+    if(schools.schools[school].major){
+        major=HTMLeducationExperienceMajor.replace("%major%",schools.schools[school].major);
     }
     $("#education-experiences").append(HTMLeducationExperienceStart
-        +HTMLeducationExperienceLink.replace("%link%",profile.schools[school].link).replace("%image-source%",profile.schools[school].image_link)
-        +HTMLeducationExperienceSource.replace("%source%",profile.schools[school].source)
-        +HTMLeducationExperienceDegree.replace("%degree%",profile.schools[school].degree)
+        +HTMLeducationExperienceLink.replace("%link%",schools.schools[school].link).replace("%image-source%",schools.schools[school].image_link)
+        +HTMLeducationExperienceSource.replace("%source%",schools.schools[school].source)
+        +HTMLeducationExperienceDegree.replace("%degree%",schools.schools[school].degree)
         +major
-        +HTMLeducationExperienceSchool.replace("%school%",profile.schools[school].school)
-        +HTMLeducationExperienceDate.replace("%date%",profile.schools[school].dates));
+        +HTMLeducationExperienceSchool.replace("%school%",schools.schools[school].school)
+        +HTMLeducationExperienceDate.replace("%date%",schools.schools[school].dates));
+}
 }
 
+schools.display();
+
+
+topics.display=function(){
 $("#resume-main").append(HTMLrelevantTopics);
-for (topic in profile.topics) {
-    if(profile.topics[topic].relevance/1>0.5){
-        $("#topicList").append(HTMLrelevantTopic.replace("%topic%",profile.topics[topic].text));
+for (topic in topics.topics) {
+    if(topics.topics[topic].relevance/1>0.5){
+        $("#topicList").append(HTMLrelevantTopic.replace("%topic%",topics.topics[topic].text));
     }
 }
-
-$("#resume-main").append(HTMLfromTheWebSection);
-for(website in profile.websites) {
-    $("#fromTheWebSection").append(HTMLfromTheWebEntry.replace("%color%",fromTheWebColor[website%4]));
-    $(".web-entry").last().append(HTMLfromTheWebTitle.replace("%web-url%",profile.websites[website].link).replace("%link-title%",profile.websites[website].title));
-    $(".web-entry").last().append(HTMLfromTheWebLink.replace("%web-url%",profile.websites[website].link));
-    $(".web-entry").last().append(HTMLfromTheWebSnippet.replace("%web-site-snippet%",profile.websites[website].snippet));
 }
+topics.display();
+
+websites.display=function(){
+$("#resume-main").append(HTMLfromTheWebSection);
+for(website in websites.websites) {
+    $("#fromTheWebSection").append(HTMLfromTheWebEntry.replace("%color%",fromTheWebColor[website%4]));
+    $(".web-entry").last().append(HTMLfromTheWebTitle.replace("%web-url%",websites.websites[website].link).replace("%link-title%",websites.websites[website].title));
+    $(".web-entry").last().append(HTMLfromTheWebLink.replace("%web-url%",websites.websites[website].link));
+    $(".web-entry").last().append(HTMLfromTheWebSnippet.replace("%web-site-snippet%",websites.websites[website].snippet));
+}
+}
+
+websites.display();
 
 $("#resume-main").append(HTMLmap);
 $("#mapDiv").append(googleMap);
 
+profile.displayFooter=function(){
 if(profile.social){
     $("#resume-main").append(HTMLsocialIconsBelow);
     for (network in profile.social) {
@@ -290,6 +324,4 @@ if(profile.social){
     }
 }
 }
-
-profile.display();
-
+profile.displayFooter();
