@@ -206,6 +206,7 @@ var profile = {
 
 var fromTheWebColor = ["#3F51B5", "#D50000", "#109D59", "#FFC107"];
 
+profile.display = function(){
 $("#header").append(HTMLheaderPic.replace("%profile-pic%",profile.profile_pic));
 $("#header").append(HTMLheaderDetail);
 $("#header-details").append(HTMLheaderName.replace("%name%",profile.name));
@@ -288,6 +289,7 @@ if(profile.social){
         $("#social-icons-below").append(HTMLsocialIcon.replace(/%social%/g,network).replace("%link%",profile.social[network].link));
     }
 }
+}
 
-
+profile.display();
 
