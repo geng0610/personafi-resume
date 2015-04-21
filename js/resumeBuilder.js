@@ -1,14 +1,16 @@
-var bio = {
+var profile = {
     "profile_pic": "images/me.png",
     "name": "Geng Tan",
     "description": "MBA Candidate, Cornell Tech",
     "e_mails": [
         "geng0610@gmail.com",
-        "geng@personafi.io"
+        "geng@personafi.io",
+        "gt286@cornell.edu"
     ],
     "personal_website": [
         "http://personafi.io/",
-        "http://www.projectsbygeng.com/"
+        "http://www.projectsbygeng.com/",
+        "https://www.linkedin.com/in/gengt"
     ],
     "contacts": {
         "location": "new york"
@@ -16,7 +18,7 @@ var bio = {
     "social":{
         "facebook": {"link":"https://www.facebook.com/geng.tan"},
         "linkedin": {"link":"https://www.linkedin.com/in/gengt"},
-        "twitter": {"link":"https://www.twilio.com/geng0610"},
+        "twitter": {"link":"https://twitter.com/geng0610"},
         "googleplus": {"link":"https://plus.google.com/+GengTan/"},
         "angellist": {"link":"https://angel.co/geng-tan"},
         "github": {"link":"https://github.com/geng0610"},
@@ -25,98 +27,75 @@ var bio = {
         "vine": {"link":"https://vine.co/"},
         "quora": {"link":"http://www.quora.com/Geng-Tan"},
         "youtube": {"link":"https://www.youtube.com/user/geng0610"}
-    }
-};
-
-
-$("#header").append(HTMLheaderPic.replace("%profile-pic%",bio.profile_pic));
-$("#header").append(HTMLheaderDetail);
-$("#header-details").append(HTMLheaderName.replace("%name%",bio.name));
-$("#header-details").append(HTMLheaderDescription.replace("%header-description%",bio.description));
-$("#header-details").append(HTMLheaderEmail);
-$("#header-details").append(HTMLheaderWebsite);
-$("#personal-e-mail").append(HTMLheaderEmailText.replace("%personal-e-mail%",bio.e_mails[0]));
-$("#personal-e-mail").append(HTMLheaderEmailEnd);
-$("#personal-website").append(HTMLheaderWebsiteText.replace("%personal-website%",bio.personal_website[0]));
-$("#personal-website").append(HTMLheaderWebsiteEnd);
-
-if(bio.social){
-    $("#resume-main").append(HTMLsocialIcons);
-    for (network in bio.social) {
-        $("#social-icons").append(HTMLsocialIcon.replace(/%social%/g,network).replace("%link%",bio.social[network].link));
-    }
-}
-
-var work = {
+    },
     "jobs": [
         {
             "employer": "Cornell",
             "position": "MBA Student",
+            "source": "http://tech.cornell.edu/",
             "location": "New York",
             "date": "2014-2015",
             "link": "http://tech.cornell.edu/",
             "image_link": "http://www.fallsofficial.com/files/2014/09/Cornell.png",
-            "description": "First MBA Class at Cornell Tech"
+            "description": "<b>Prominent Projects include</b> <li>Design and prototyping of Personafi, a people search engine that uses natural language processing, social platforms, and publicly available data to profile, tag, and find people</li><li>Design and prototyping of Roller Deck, a personal social network and media aggregator</li><li>Design and prototyping of security platform for IoT devices for Canary Smart Security</li><li>NYC Taxi Viz. Recommendation for best locations to take taxi in NYC based on data from over 170 million taxi rides</li>"
+        },
+        {
+            "employer": "Croscon",
+            "position": "MBA Intern",
+            "source": "http://www.croscon.com/",
+            "location": "New York",
+            "date": "2014",
+            "link": "http://www.croscon.com/",
+            "image_link": "https://pbs.twimg.com/profile_images/448570928700473344/h0xRp_to_400x400.png",
+            "description": "Defined several features for a project management tool and created low fidelity wireframe in Balsamiq and high fidelity wireframe using PowerPoint."
         },
         {
             "employer": "Appinions",
             "position": "Analyst",
+            "source": "http://www.appinions.com/",
             "location": "New York",
             "date": "2012-2014",
             "link": "http://www.appinions.com/",
             "image_link": "https://pbs.twimg.com/profile_images/2597231983/jkjaf08nnf2pay487zra.jpeg",
-            "description": "Product Management"
+            "description": "<b>Designed and prototyped new features and created a number of industry reports using Appinions' big-data platform</b><li>Improved company brand by collaborating with journalists and publishing reports in reputable media outlets. (Forbes, USAToday, etc)</li><li>Served as a liaison between business team and engineers in identifying high priority features</li>"
+        },
+        {
+            "employer": "The Boston Consulting Group",
+            "position": "Associate",
+            "source": "http://www.bcg.com/",
+            "location": "Los Angeles",
+            "date": "2011-2012",
+            "link": "http://www.bcg.com/",
+            "image_link": "http://utsbsoc.com/wp-content/uploads/2012/07/bcg-icon.png",
+            "description": "<b>Management consulting across a number of industries</b><li>Developed strategies to realize $80M+ in saving opportunities, identified through analysis of $4B+ procurement data for a pharmaceutical company</li><li>Identified a decreasing value perception by analyzing survey results for a consumer goods company suffering from a slowing revenue growth</li><li>Recommended growth opportunities after developing a forecast for returns across 20 U.S. housing markets for a home building company</li><li>Recommended profitability improvement initiatives by modeling financial impact of operating under various supply and demand scenarios for a major consumer goods company</li><li>Benchmarked the financial performance of $3B+ business divisions and forecasted financial impact of various initiatives for a major building products company</li>"
         }
-    ]
-};
-
-$("#resume-main").append(HTMLworkExperiences);
-for (job in work.jobs){
-    $("#work-experiences").append(HTMLworkExperienceStart
-        +HTMLworkExperienceLink.replace("%link%",work.jobs[job].link).replace("%image-source%",work.jobs[job].image_link)
-        +HTMLworkExperiencePosition.replace("%position%",work.jobs[job].position)
-        +HTMLworkExperienceEmployer.replace("%employer%",work.jobs[job].employer)
-        +HTMLworkExperienceDate.replace("%date%",work.jobs[job].date)
-        +HTMLworkExperienceDescription.replace("%description%",work.jobs[job].description));
-}
-
-var projects = {
+    ],
     "projects": [
         {
-            "title": "project1",
-            "sponsor": "Cornell",
+            "title": "NYC Taxi Viz",
+            "sponsor": "Cornell University",
+            "source": "http://www.nyctaxiviz.com",
             "dates": "2015",
             "link": "http://tech.cornell.edu/",
             "image_link": "http://www.fallsofficial.com/files/2014/09/Cornell.png",
-            "description": "this is project 1"
+            "description": '<div>In 2013, New Yorkers took 170 million taxi rides. The New York City Taxi Commission recently released its data under the Freedom of Information Act, resulting in our ability to use big data visualization to find patterns and insights as a project for Cornell Tech. We set out to answer an argument we&#39ve all had many times- where&#39s the best place to walk and grab a cab?</div> <div style="text-align:center"><img src="http://www.weebly.com/uploads/2/6/2/8/26283003/front-page.gif" style="width:50%"></div>'
         },
         {
-            "title": "project2",
-            "sponsor": "Appinions",
-            "dates": "2014",
-            "link": "http://www.appinions.com/",
-            "image_link": "https://pbs.twimg.com/profile_images/2597231983/jkjaf08nnf2pay487zra.jpeg",
-            "description": "this is project 2"
+            "title": "People Search - Cornell Big Data Hackathon",
+            "sponsor": "Cornell University",
+            "source": "https://datahackathon2015.splashthat.com/",
+            "dates": "2015",
+            "link": "http://tech.cornell.edu/",
+            "image_link": "http://www.fallsofficial.com/files/2014/09/Cornell.png",
+            "description": '<div>During Big Data Hackathon held at Cornell Tech, we looked at the commonalities between people from CrunchBase Database and me in order to explore ways to optimize search result for a person. Characteristics about people are extracted using AlchemyAPI (NLP). This graph is based on a search result for product related people. The larger the dot, the more commonalities the person shares with me. The lines between each person represent common traists shared by them. Thicker lines means more commonalities.</div><div style="text-align:center"><div id="chart"></div></div>'
         }
-    ]
-};
-
-$("#resume-main").append(HTMLprojectExperiences);
-for (project in projects.projects){
-    $("#project-experiences").append(HTMLprojectExperienceStart
-        +HTMLprojectExperienceLink.replace("%link%",projects.projects[project].link).replace("%image-source%",projects.projects[project].image_link)
-        +HTMLprojectExperienceTitle.replace("%title%",projects.projects[project].title)
-        +HTMLprojectExperienceSponsor.replace("%sponsor%",projects.projects[project].sponsor)
-        +HTMLprojectExperienceDate.replace("%date%",projects.projects[project].dates)
-        +HTMLprojectExperienceDescription.replace("%description%",projects.projects[project].description));
-}
-
-var education = {
+    ],
     "schools": [
         {
             "school": "Cornell Tech",
             "location": "New York City, NY",
             "degree": "MBA",
+            "source": "http://tech.cornell.edu/",
             "dates": "2014-2015",
             "link": "http://tech.cornell.edu/",
             "image_link": "http://www.fallsofficial.com/files/2014/09/Cornell.png"
@@ -125,47 +104,65 @@ var education = {
             "school": "MIT",
             "location": "Cambridge, MA",
             "degree": "BS",
+            "source": "http://web.mit.edu/",
             "major": "Mechanical Engineering",
             "dates": "2006-2010",
-            "link": "web.mit.edu",
+            "link": "http://web.mit.edu/",
             "image_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/321px-MIT_logo.svg.png"
         },
         {
             "school": "MIT",
             "location": "Cambridge, MA",
             "degree": "BS",
+            "source": "http://web.mit.edu/",
             "major": "Management Science",
             "dates": "2006-2010",
-            "link": "web.mit.edu",
+            "link": "http://web.mit.edu/",
             "image_link": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/321px-MIT_logo.svg.png"
         },
         {
             "school": "Udacity",
             "location": "",
             "degree": "Nano-Degree",
+            "source": "udacity.com",
             "major": "Web Development",
             "dates": "2015",
             "link": "udacity.com",
             "image_link": "https://forums.udacity.com/upfiles/udacity-logo.jpg"
         }
-    ]
-};
-
-$("#resume-main").append(HTMLeducationExperiences);
-for (school in education.schools){
-    var major = "";
-    if(education.schools[school].major){
-        major=HTMLeducationExperienceMajor.replace("%major%",education.schools[school].major);
-    }
-    $("#education-experiences").append(HTMLeducationExperienceStart
-        +HTMLeducationExperienceLink.replace("%link%",education.schools[school].link).replace("%image-source%",education.schools[school].image_link)
-        +HTMLeducationExperienceDegree.replace("%degree%",education.schools[school].degree)
-        +major
-        +HTMLeducationExperienceSchool.replace("%school%",education.schools[school].school)
-        +HTMLeducationExperienceDate.replace("%date%",education.schools[school].dates));
-}
-
-var relevantTopics = {
+    ],
+    "websites": [
+        {
+            "title": "Projects by Geng",
+            "link": "www.projectsbygeng.com/",
+            "snippet": "Welcome to Projects by Geng. Sharing my latest projects with the world! I created this website in order to ... Here are some of my coding projects. Let me see!"
+        },
+        {
+            "title": "Geng Tan - Profile | Tableau Public",
+            "link": "public.tableau.com/profile/gt286#!/edit",
+            "snippet": "Entreprenuer, Engineer and an MBA, Data viz enthusiast. I used to be an analyst at a big data start-up and BCG."
+        },
+        {
+            "title": "Tan Geng - Forbes",
+            "link": "www.forbes.com/profile/tan-geng/",
+            "snippet": "Tan Geng on Forbes. ... Tan Geng. Follow Following Unfollow (0). Profile Not Available. Financial data provided by. Forbes Video. Who Just Made a Billion ..."
+        },
+        {
+            "title": "Geng Tan | CoFoundersLab",
+            "link": "https://www.cofounderslab.com/geng-tan-57824",
+            "snippet": "Geng. i'm a: Product Manager. looking for a: Programmer/Developer. to be my: Co-Founder. City: New York, US. Industry: B2B Services. Age group: 25 - 35 ..."
+        },
+        {
+            "title": "Geng Tan's (GengTan) software Portfolio | ChallengePost",
+            "link": "challengepost.com/GengTan/challenges",
+            "snippet": "Geng Tan is a Designer specializing in Data. Follow Geng Tan on ChallengePost! ... Geng Tan's avatar. Follow. Geng Tan (GengTan). Designer, Business ..."
+        },
+        {
+            "title": "Halloween Party 2011 by Geng Tan - SoundCloud",
+            "link": "https://soundcloud.com/geng-tan/halloween-party-2011",
+            "snippet": "Follow Geng Tan and others on SoundCloud. Sign up for SoundCloud. Sign in. Here's a part of the mix I made for a Halloween party in 2011."
+        }
+    ],
     "topics": [
         {
             "text": "NLP",
@@ -204,127 +201,93 @@ var relevantTopics = {
             "relevance": "0.2"
         }
     ]
+
 };
+
+var fromTheWebColor = ["#3F51B5", "#D50000", "#109D59", "#FFC107"];
+
+$("#header").append(HTMLheaderPic.replace("%profile-pic%",profile.profile_pic));
+$("#header").append(HTMLheaderDetail);
+$("#header-details").append(HTMLheaderName.replace("%name%",profile.name));
+$("#header-details").append(HTMLheaderDescription.replace("%header-description%",profile.description));
+$("#header-details").append(HTMLheaderEmail);
+$("#header-details").append(HTMLheaderWebsite);
+$("#personal-e-mail").append(HTMLheaderEmailText.replace(/%personal-e-mail%/g,profile.e_mails[0]));
+$("#personal-e-mail").append(HTMLheaderEmailEnd);
+$("#personal-website").append(HTMLheaderWebsiteText.replace(/%weblink%/g,profile.personal_website[0]));
+$("#personal-website").append(HTMLheaderWebsiteEnd);
+
+if(profile.social){
+    $("#resume-main").append(HTMLsocialIcons);
+    for (network in profile.social) {
+        $("#social-icons").append(HTMLsocialIcon.replace(/%social%/g,network).replace("%link%",profile.social[network].link));
+    }
+}
+
+$("#resume-main").append(HTMLworkExperiences);
+for (job in profile.jobs){
+    $("#work-experiences").append(HTMLworkExperienceStart
+        +HTMLworkExperienceLink.replace("%link%",profile.jobs[job].link).replace("%image-source%",profile.jobs[job].image_link)
+        +HTMLworkExperienceSource.replace("%source%",profile.jobs[job].source)
+        +HTMLworkExperiencePosition.replace("%position%",profile.jobs[job].position)
+        +HTMLworkExperienceEmployer.replace("%employer%",profile.jobs[job].employer)
+        +HTMLworkExperienceDate.replace("%date%",profile.jobs[job].date)
+        +HTMLworkExperienceDescription.replace("%description%",profile.jobs[job].description));
+}
+$(".entry-text").last()[0].getElementsByTagName('hr')[0].remove();
+
+
+$("#resume-main").append(HTMLprojectExperiences);
+for (project in profile.projects){
+    $("#project-experiences").append(HTMLprojectExperienceStart
+        +HTMLprojectExperienceLink.replace("%link%",profile.projects[project].link).replace("%image-source%",profile.projects[project].image_link)
+        +HTMLprojectExperienceSource.replace("%source%",profile.projects[project].source)
+        +HTMLprojectExperienceTitle.replace("%title%",profile.projects[project].title)
+        +HTMLprojectExperienceSponsor.replace("%sponsor%",profile.projects[project].sponsor)
+        +HTMLprojectExperienceDate.replace("%date%",profile.projects[project].dates)
+        +HTMLprojectExperienceDescription.replace("%description%",profile.projects[project].description));
+}
+$(".entry-text").last()[0].getElementsByTagName('hr')[0].remove();
+
+$("#resume-main").append(HTMLeducationExperiences);
+for (school in profile.schools){
+    var major = "";
+    if(profile.schools[school].major){
+        major=HTMLeducationExperienceMajor.replace("%major%",profile.schools[school].major);
+    }
+    $("#education-experiences").append(HTMLeducationExperienceStart
+        +HTMLeducationExperienceLink.replace("%link%",profile.schools[school].link).replace("%image-source%",profile.schools[school].image_link)
+        +HTMLeducationExperienceSource.replace("%source%",profile.schools[school].source)
+        +HTMLeducationExperienceDegree.replace("%degree%",profile.schools[school].degree)
+        +major
+        +HTMLeducationExperienceSchool.replace("%school%",profile.schools[school].school)
+        +HTMLeducationExperienceDate.replace("%date%",profile.schools[school].dates));
+}
 
 $("#resume-main").append(HTMLrelevantTopics);
-for (topic in relevantTopics.topics) {
-    if(relevantTopics.topics[topic].relevance/1>0.5){
-        $("#topicList").append(HTMLrelevantTopic.replace("%topic%",relevantTopics.topics[topic].text));
+for (topic in profile.topics) {
+    if(profile.topics[topic].relevance/1>0.5){
+        $("#topicList").append(HTMLrelevantTopic.replace("%topic%",profile.topics[topic].text));
     }
 }
 
-var fromTheWebColor = ["#3F51B5", "#D50000", "#109D59", "#FFC107"]
-
-
-
-
-
-
+$("#resume-main").append(HTMLfromTheWebSection);
+for(website in profile.websites) {
+    $("#fromTheWebSection").append(HTMLfromTheWebEntry.replace("%color%",fromTheWebColor[website%4]));
+    $(".web-entry").last().append(HTMLfromTheWebTitle.replace("%web-url%",profile.websites[website].link).replace("%link-title%",profile.websites[website].title));
+    $(".web-entry").last().append(HTMLfromTheWebLink.replace("%web-url%",profile.websites[website].link));
+    $(".web-entry").last().append(HTMLfromTheWebSnippet.replace("%web-site-snippet%",profile.websites[website].snippet));
+}
 
 $("#resume-main").append(HTMLmap);
-
-if(bio.social){
-    $("#resume-main").append(HTMLsocialIconsBelow);
-    for (network in bio.social) {
-        $("#social-icons-below").append(HTMLsocialIcon.replace(/%social%/g,network).replace("%link%",bio.social[network].link));
-    }
-}
-
-
-/*education.display = function(){
-    for(school in education.schools){
-        $("#education").append(HTMLschoolStart);
-        var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-        var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-        $(".education-entry:last").append(formattedSchoolName+formattedSchoolDegree);
-        var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-        $(".education-entry:last").append(formattedSchoolDates);
-        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-        $(".education-entry:last").append(formattedSchoolLocation);
-        if (education.schools[school].majors.length > 0) {
-            for(major in education.schools[school].majors){
-                var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
-                $(".education-entry:last").append(formattedMajor);
-            }
-        };
-    }
-    if (education.onlineClasses) {
-        $(".education-entry:last").append(HTMLonlineClasses);
-        for (onlineClass in education.onlineClasses){
-            //$("#education").append(HTMLonlineStart);
-            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onlineClass].title);
-            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineClass].school);
-            $(".education-entry:last").append(formattedOnlineTitle+formattedOnlineSchool);
-            var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineClasses[onlineClass].dates);
-            $(".education-entry:last").append(formattedOnlineDates);
-            var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineClasses[onlineClass].url);
-            $(".education-entry:last").append(formattedOnlineURL);
-        }
-    }
-}
-
-
-education.display(); 
-
-
-projects.display = function(){
-    for(project in projects.projects){
-        $("#projects").append(HTMLprojectStart);
-
-        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-        $(".project-entry:last").append(formattedTitle);
-
-        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-        $(".project-entry:last").append(formattedDates);
-
-        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-        $(".project-entry:last").append(formattedDescription);
-
-        if (projects.projects[project].images.length > 0) {
-            for(image in projects.projects[project].images){
-                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-                $(".project-entry:last").append(formattedImage);
-            }
-        };
-    }
-}
-
-
-projects.display(); 
-
-work.display = function(){
-    for (job in work.jobs){
-    	$("#workExperience").append(HTMLworkStart);
-    	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-    	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    	var formattedEmployerTitle = formattedEmployer +formattedTitle+formattedDates+formattedLocation+formattedDescription;
-    	$(".work-entry:last").append(formattedEmployerTitle);
-    };
-};
-
-work.display();
-
-$(document).click(function(loc){
-	var x = loc.pageX;
-	var y = loc.pageY;
-	logClicks(x,y);
-});*/
-
-function inName(name){
-    var name=name.trim().split(" ");
-    console.log(name);
-    name[1]=name[1].toUpperCase();
-    name[0]=name[0].slice(0,1).toUpperCase()+name[0].slice(1).toLowerCase();
-    return name[0]+" "+name[1];
-}
-
-//$("#resume-main").append(internationalizeButton);
-
-
-
 $("#mapDiv").append(googleMap);
+
+if(profile.social){
+    $("#resume-main").append(HTMLsocialIconsBelow);
+    for (network in profile.social) {
+        $("#social-icons-below").append(HTMLsocialIcon.replace(/%social%/g,network).replace("%link%",profile.social[network].link));
+    }
+}
+
 
 

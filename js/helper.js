@@ -21,47 +21,54 @@ var HTMLheaderDescription = '<h2 id="summary" class="row header-description">%he
 var HTMLheaderEmail = '<div id="personal-e-mail" class="row personal-contact"></div>';
 var HTMLheaderWebsite = '<div id="personal-website" class="row personal-contact"></div>';
 
-var HTMLheaderEmailText = '<div id="e-mail-description" class="col-md-9 contact-description"><a href = "%e-mail-link%"><img id="e-mail-icon" src="images/mail-icon-256px.png" class="contact-icon" ></a><span class="contact-text">%personal-e-mail%</span></div>';
-var HTMLheaderEmailEnd = '<div id="more-e-mail-description" class="col-md-3 more-contact-description"><span class="contact-text">other e-mails</span></div>';
-var HTMLheaderWebsiteText = '<div id="website-description" class="col-md-9 contact-description"><a href = "%weblink%"><img id="website-icon" src="images/link-icon-256px.png" class="contact-icon" ></a><span class="contact-text"><a href = "%weblink%">%personal-website%</a></span></div>';
-var HTMLheaderWebsiteEnd = '<div id="more-website-description" class="col-md-3 more-contact-description" ><span class="contact-text">other websites</span></div>';
+var HTMLheaderEmailText = '<div id="e-mail-description" class="col-md-9 contact-description"><a href = "mailto:%personal-e-mail%"><img id="e-mail-icon" src="images/mail-icon-256px.png" class="contact-icon" ></a><span class="contact-text">%personal-e-mail%</span></div>';
+var HTMLheaderEmailEnd = '<div id="more-e-mail-description" class="col-md-3 more-contact-description"><button id="more-email" class="contact-add-button" onclick="addEmail()">other e-mails</button></div>';
+var HTMLheaderEmailEndLess = '<div id="less-e-mail-description" class="col-md-3 more-contact-description"><button id="less-email" class="contact-subtract-button" onclick="removeEmail()">hide other e-mails</button></div>';
+var HTMLheaderWebsiteText = '<div id="website-description" class="col-md-9 contact-description"><a href = "%weblink%"><img id="website-icon" src="images/link-icon-256px.png" class="contact-icon" ></a><span class="contact-text"><a href = "%weblink%">%weblink%</a></span></div>';
+var HTMLheaderWebsiteEnd = '<div id="more-website-description" class="col-md-3 more-contact-description" ><button id="more-website" class="contact-add-button" onclick="addWebsite()">other websites</button></div>';
+var HTMLheaderWebsiteEndLess = '<div id="less-website-description" class="col-md-3 more-contact-description" ><button id="less-website" class="contact-subtract-button" onclick="removeWebsite()">hide other websites</button></div>';
 
 var HTMLsocialIcons = '<div id="social-icons" class="row"></div><hr>';
 var HTMLsocialIcon = '<a href = "%link%"><img id="%social%-icon" src="images/%social%-icon-256px.png" class="social-icon" ></a>';
 
-var HTMLworkExperiences = '<div id="workExperience" class="row section"><div class="col-md-3 section-title"><h3>Work Experiences</h3></div><div id = "work-experiences" class="col-md-9 section-description"></div></div><hr>';
+var HTMLworkExperiences = '<div id="workExperience" class="row section"><div class="col-md-3 section-title"><h3>Work Experiences:</h3></div><div id = "work-experiences" class="col-md-9 section-description"></div></div><hr>';
 
 var HTMLworkExperienceStart = '<div class = "entry"><div class="row"><div class="col-md-9 entry-description">';
 var HTMLworkExperienceLink = '<a href = "%link%"><img src="%image-source%" alt="work-logo" class="experience-icon" ></a>';
-var HTMLworkExperiencePosition = '<span class = "entry-description-title">%position%';
-var HTMLworkExperienceEmployer = ', %employer%</span></div>';
-var HTMLworkExperienceDate = '<div class="col-md-3 work-date"><span class = "entry-description-date">%date%</span></div></div>';
-var HTMLworkExperienceDescription ='<div class="row"><div class = "col-md-11 entry-text">%description%</div></div></div>';
+var HTMLworkExperienceSource = '<a href=%source% class = "entry-description-title">';
+var HTMLworkExperiencePosition = '%position%';
+var HTMLworkExperienceEmployer = ', %employer%</a></div>';
+var HTMLworkExperienceDate = '<div class="col-md-2 work-date"><span class = "entry-description-date">%date%</span></div></div>';
+var HTMLworkExperienceDescription ='<div class="row"><div class = "col-md-11 entry-text">%description%<hr></div></div></div>';
 
 
-var HTMLprojectExperiences = '<div id="projectExperience" class="row section"><div class="col-md-3 section-title"><h3>Past Projects</h3></div><div id = "project-experiences" class="col-md-9 section-description"></div></div><hr>';
+var HTMLprojectExperiences = '<div id="projectExperience" class="row section"><div class="col-md-3 section-title"><h3>Past Projects:</h3></div><div id = "project-experiences" class="col-md-9 section-description"></div></div><hr>';
 
 var HTMLprojectExperienceStart = '<div class = "entry"><div class="row"><div class="col-md-9 entry-description">';
 var HTMLprojectExperienceLink = '<a href = "%link%"><img src="%image-source%" alt="work-logo" class="experience-icon" ></a>';
-var HTMLprojectExperienceTitle = '<span class = "entry-description-title">%title%';
-var HTMLprojectExperienceSponsor = ', %sponsor%</span></div>';
-var HTMLprojectExperienceDate = '<div class="col-md-3 work-date"><span class = "entry-description-date">%date%</span></div></div>';
-var HTMLprojectExperienceDescription ='<div class="row"><div class = "col-md-11 entry-text">%description%</div></div></div>';
+var HTMLprojectExperienceSource = '<a href=%source% class = "entry-description-title">';
+var HTMLprojectExperienceTitle = '%title%';
+var HTMLprojectExperienceSponsor = ', %sponsor%</a></div>';
+var HTMLprojectExperienceDate = '<div class="col-md-2 work-date"><span class = "entry-description-date">%date%</span></div></div>';
+var HTMLprojectExperienceDescription ='<div class="row"><div class = "col-md-11 entry-text">%description%<hr></div></div></div>';
 
 
-var HTMLeducationExperiences = '<div id="educationExperience" class="row section"><div class="col-md-3 section-title"><h3>Education Experiences</h3></div><div id = "education-experiences" class="col-md-9 section-description"></div></div><hr>';
+var HTMLeducationExperiences = '<div id="educationExperience" class="row section"><div class="col-md-3 section-title"><h3>Education Experiences:</h3></div><div id = "education-experiences" class="col-md-9 section-description"></div></div><hr>';
 
 var HTMLeducationExperienceStart = '<div class = "entry"><div class="row"><div class="col-md-9 entry-description">';
 var HTMLeducationExperienceLink = '<a href = "%link%"><img src="%image-source%" alt="work-logo" class="experience-icon" ></a>';
-var HTMLeducationExperienceDegree = '<span class = "entry-description-title">%degree%';
+var HTMLeducationExperienceSource = '<a href=%source% class = "entry-description-title">';
+var HTMLeducationExperienceDegree = '%degree%';
 var HTMLeducationExperienceMajor = ', %major%';
-var HTMLeducationExperienceSchool = ', %school%</span></div>';
-var HTMLeducationExperienceDate = '<div class="col-md-3 work-date"><span class = "entry-description-date">%date%</span></div></div></div>';
+var HTMLeducationExperienceSchool = ', %school%</a></div>';
+var HTMLeducationExperienceDate = '<div class="col-md-2 work-date"><span class = "entry-description-date">%date%</span></div></div></div>';
 
-var HTMLrelevantTopics = '<div id="relevantTopics" class="row section"><div class="col-md-3 section-title"><h3>Relevant Topics</h3></div><div class="col-md-9 section-description"><div class = "entry"><div id = "topicList" class="row"></div></div></div></div><hr>';
+var HTMLrelevantTopics = '<div id="relevantTopics" class="row section"><div class="col-md-3 section-title"><h3>Relevant Topics:</h3></div><div class="col-md-9 section-description"><div class = "entry"><div id = "topicList" class="row"></div></div></div></div><hr>';
 var HTMLrelevantTopic ='<div class="col-md-3 topic"> %topic% </div>';
 
-var HTMLfromTheWebSection='<div id="fromTheWeb" class="row section"><div class="col-md-3 section-title"><h3>From the Web</h3></div><div class="col-md-9 section-description"><div id="fromTheWebEntry" class = "web-entry" style="border-top: 3px solid %color%"></div></div></div><hr>';
+var HTMLfromTheWebSection='<div id="fromTheWeb" class="row section"><div class="col-md-3 section-title"><h3>From the Web:</h3></div><div id="fromTheWebSection" class="col-md-9 section-description"></div></div><hr>';
+
+var HTMLfromTheWebEntry='<div id="fromTheWebEntry" class = "web-entry" style="border-top: 3px solid %color%"></div>';
 var HTMLfromTheWebTitle='<div class="row"><div class="col-md-12"><a href="%web-url%" class="web-site-title">%link-title%</a></div></div>';
 var HTMLfromTheWebLink='<div class="row"><div class="col-md-12 web-site-link">%web-url%</div></div>';
 var HTMLfromTheWebSnippet='<div class="row"><div class="col-md-12 web-site-snippet">%web-site-snippet%</div></div>';
@@ -71,83 +78,48 @@ var HTMLmap = '<div id="mapDiv" class="maps row"><div id="mapTitle" class="col-1
 var HTMLsocialIconsBelow = '<div id="letsConnect" class="row"><h2 class="center-text col-md-12">Let&#39s Connect</h2></div><div id="social-icons-below" class="row"></div>';
 
 
-/*var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr/>';
-
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
-
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
-
-var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
-
-var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
-
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
-
-var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
-
-var HTMLonlineStart = '<div class="online-entry"></div>';
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';*/
-
-var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 
 /*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
+Add and remove extra e-mail from display
 */
-$(document).ready(function() {
-  $('button').click(function() {
-    var oldName = $("#name").text();
-    var iName = inName(oldName) || function(){};
-    $('#name').html(iName);  
-  });
-});
+function addEmail(){
+  for (i=1; i<profile.e_mails.length; i++){
+    $("#more-e-mail-description").before(HTMLheaderEmailText.replace(/%personal-e-mail%/g,profile.e_mails[i]));
+  }
+  $("#more-e-mail-description").before(HTMLheaderEmailEndLess);
+  var more_email_button = document.getElementById("more-e-mail-description");
+  more_email_button.parentNode.removeChild(more_email_button);
+};
 
+function removeEmail() {
+  //$('#resume-main').prepend('<p>testestests</p>');
+  var less_email_button = document.getElementById("personal-e-mail");
+  less_email_button.parentNode.removeChild(less_email_button);
+  $("#personal-website").before(HTMLheaderEmail);
+  $("#personal-e-mail").append(HTMLheaderEmailText.replace(/%personal-e-mail%/g,profile.e_mails[0]));
+  $("#personal-e-mail").append(HTMLheaderEmailEnd);
+};
 /*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
+Add and remove extra e-mail from display
 */
-clickLocations = [];
+function addWebsite(){
+  for (i=1; i<profile.e_mails.length; i++){
+    $("#more-website-description").before(HTMLheaderWebsiteText.replace(/%weblink%/g,profile.personal_website[i]));
+  }
+  $("#more-website-description").before(HTMLheaderWebsiteEndLess);
+  var more_email_button = document.getElementById("more-website-description");
+  more_email_button.parentNode.removeChild(more_email_button);
+};
 
-function logClicks(x,y) {
-  clickLocations.push(
-    {
-      x: x,
-      y: y
-    }
-  );
-  console.log('x location: ' + x + '; y location: ' + y);
-}
-
-$(document).click(function(loc) {
-  // your code goes here!
-});
+function removeWebsite() {
+  var less_email_button = document.getElementById("personal-website");
+  less_email_button.parentNode.removeChild(less_email_button);
+  $("#personal-e-mail").after(HTMLheaderWebsite);
+  $("#personal-website").append(HTMLheaderWebsiteText.replace(/%weblink%/g,profile.personal_website[0]));
+  $("#personal-website").append(HTMLheaderWebsiteEnd);
+};
 
 
 
@@ -185,18 +157,18 @@ function initializeMap() {
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
+    locations.push(profile.contacts.location);
 
     // iterates through school locations and appends each location to
     // the locations array
-    for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+    for (var school in profile.schools) {
+      locations.push(profile.schools[school].location);
     }
 
     // iterates through work locations and appends each location to
     // the locations array
-    for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
+    for (var job in profile.jobs) {
+      locations.push(profile.jobs[job].location);
     }
 
     return locations;

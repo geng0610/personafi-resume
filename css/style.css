@@ -54,8 +54,10 @@
 
 .social-icon {
   max-width:36px;
-  margin-right: 2px;
-  margin-left: 2px;
+  margin-right: 3px;
+  margin-left: 3px;
+  margin-top: 1px;
+  margin-bottom: 1px;
   padding: 0px;
 }
 
@@ -67,6 +69,8 @@
 .contact-description {
   height:24px;
   vertical-align: middle;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .contact-icon {
@@ -120,10 +124,19 @@
 .entry-description-title {
   display:inline-block;
   vertical-align: middle;
+  color: #9E9E9E;
   padding: 0px;
   font-size: 16px;
   font-weight: 700;
   margin-left: 5px;
+}
+
+.entry-description-title:hover {
+  color: #3F51B5;
+}
+
+.work-date{
+  text-align: right;
 }
 
 .entry-description-date {
@@ -184,7 +197,7 @@
 
 h1 {
   font-size: 40px;
-  color: #9E9E9E;
+  color: #616161;
   line-height: 48px;
   font-weight: 200;
   /*display: inline;*/
@@ -193,15 +206,15 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #9E9E9E;
+  color: #616161;
   line-height: 29px;
   /*padding: 10px;*/
 }
 
 h3 {
   font-style: italic;
-  font-size: 16px;
-  color: #9E9E9E;
+  font-size: 18px;
+  color: #616161;
   font-weight: bold;
   margin: 0px;
   padding:0px;
@@ -304,8 +317,8 @@ span {
 #map {
   display: block;
   height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #mapDiv {
@@ -316,4 +329,54 @@ span {
 }
 
 @media only screen and (min-width: 750px) {
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+#chart {
+  width:90%;
+}
+
+button {
+  -webkit-border-radius: 1;
+  -moz-border-radius: 1;
+  border-radius: 1px;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 2px 5px 2px 5px;
+  text-decoration: none;
+  border: 0px;
+  display:inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 128px;
+  box-shadow: 0px 1px 1px #888888;
+}
+
+button:hover {
+  text-decoration: none;
+}
+
+.contact-add-button{
+  background: #2979FF;
+}
+
+.contact-add-button:hover {
+  background: #448AFF;
+}
+
+.contact-subtract-button{
+  background: #FF1744;
+}
+
+.contact-subtract-button:hover {
+  background: #FF5252;
 }
