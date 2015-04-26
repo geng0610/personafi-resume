@@ -80,6 +80,8 @@
 {"link_id":"L_845", "source":14,"target":29,"value":4, "length":152, image:"http://findicons.com/files/icons/2637/ic_circle_social_icons/48/facebook.png", "link_comment": "business administration, product development"},
     ];
 
+window.onload = function(){
+
 var width = parseInt(d3.select('#chart').style('width'), 10);
     height = width;
 
@@ -217,3 +219,4 @@ READ THE CODE BEFORE THIS COMMENT
 
     node.attr("transform", function(d) { return "translate(" + [ d.x, d.y ] + ")"; });
   });
+}
